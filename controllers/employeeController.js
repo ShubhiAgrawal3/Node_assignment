@@ -11,10 +11,13 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-    if (req.body._id == '')
+    if (req.body._id == ''){
         insertRecord(req, res);
-        else
+    }  
+    else{
         updateRecord(req, res);
+    }
+        
 });
 
 
@@ -25,8 +28,10 @@ function insertRecord(req, res) {
     employee.mobile = req.body.mobile;
     employee.city = req.body.city;
     employee.save((err, doc) => {
-        if (!err)
+        if (!err){
             res.redirect('employee/list');
+        }
+            
         else {
             if (err.name == 'ValidationError') {
                 handleValidationError(err, req.body);
