@@ -6,7 +6,7 @@ var employeeSchema = new mongoose.Schema({
     fullName: {
         type: String,
         required: 'This field is required.'
-    },
+    }, 
     email: {
         type: String
     },

@@ -10,7 +10,7 @@ const employeeController = require('./controllers/employeeController');
 
 var app = express();
 app.use(bodyparser.urlencoded({
-    extended: true
+    extended: true 
 }));
 app.use(bodyparser.json());
 app.set('views', path.join(__dirname, '/views/'));

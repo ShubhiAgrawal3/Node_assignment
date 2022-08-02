@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const Employee = mongoose.model('Employee');
 const bcrypt = require('bcrypt');
 
-router.get('/', (req, res) => {
+router.get('/', (req, res) => { 
     res.render("employee/addOrEdit", {
         viewTitle: "Insert Employee"
     });
