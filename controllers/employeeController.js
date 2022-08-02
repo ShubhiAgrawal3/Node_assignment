@@ -31,7 +31,7 @@ app.post("/register", async (req, res) => {
       res.send(insertResult);
     } catch (error) {
       console.log(error);
-      res.status(500).send("Internal Server error Occured");
+      
     }
   });
   
@@ -42,7 +42,7 @@ app.post("/register", async (req, res) => {
       if (user) {
         const cmp = await bcrypt.compare(req.body.password, user.password);
         if (cmp) {
-          //   ..... further code to maintain authentication like jwt or sessions
+          
           res.send("Auth Successful");
         } else {
           res.send("Wrong username or password.");
@@ -52,7 +52,7 @@ app.post("/register", async (req, res) => {
       }
     } catch (error) {
       console.log(error);
-      res.status(500).send("Internal Server error Occured");
+  
     }
   });
 
